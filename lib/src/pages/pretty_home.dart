@@ -73,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(5.0),
-                        child: Text("Concejos Populares",
+                        child: Text("Consejos Populares",
                             style: TextStyle(
                                 color: Colors.grey,
                                 fontWeight: FontWeight.w600,
