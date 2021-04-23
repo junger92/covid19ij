@@ -36,8 +36,6 @@ class _MyHeaderState extends State<MyHeader> {
           ),
         ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -67,7 +65,7 @@ class _MyHeaderState extends State<MyHeader> {
               child: Stack(
                 children: <Widget>[
                   Positioned(
-                    top: (widget.offset < 0) ? 0 : widget.offset,
+                    bottom: 0,
                     left: 10,
                     child: SvgPicture.asset(
                       widget.image,

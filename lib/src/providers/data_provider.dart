@@ -2,8 +2,6 @@
 import 'dart:convert';
 import 'package:covid19ij/src/models/consejo_popular.dart';
 import 'package:covid19ij/src/models/data.dart';
-import 'package:covid19ij/src/models/item_code_plus.dart';
-import 'package:covid19ij/src/models/municipal.dart';
 import 'package:covid19ij/src/utils/http_proxy.dart';
 import 'package:flutter/foundation.dart';
 import 'package:localstorage/localstorage.dart';
