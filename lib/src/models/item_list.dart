@@ -4,8 +4,8 @@ part 'item_list.g.dart';
 
 @JsonSerializable()
 class ItemList {
-  String? name;
-  List<int>? values;
+  String? name = "";
+  List<int>? values = [];
 
   ItemList();
 

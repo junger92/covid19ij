@@ -1,10 +1,11 @@
+// @dart=2.9
 import 'package:covid19ij/src/providers/data_provider.dart';
 import 'package:covid19ij/src/widgets/stat_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class ResumeWidget extends StatelessWidget {
-  const ResumeWidget({Key? key}) : super(key: key);
+  const ResumeWidget({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,9 @@ class ResumeWidget extends StatelessWidget {
             title: "Positivos",
             color: Colors.orange,
             icon: Icons.add_circle_outline,
-            cifra: '${municipalInfo.positivos.toInt().toString()}',
+            cifra: municipalInfo.datacovid.all.resume.isEmpty
+                ? "Sin datos"
+                : '${municipalInfo.datacovid.all.resume[0].value.toInt().toString()}',
           ),
         ),
         Flexible(
@@ -26,7 +29,9 @@ class ResumeWidget extends StatelessWidget {
             title: "Recuperados",
             color: Colors.green,
             icon: Icons.home_outlined,
-            cifra: '${municipalInfo.recuperados.toInt().toString()}',
+            cifra: municipalInfo.datacovid.all.resume.isEmpty
+                ? "Sin datos"
+                : '${municipalInfo.datacovid.all.resume[2].value.toInt().toString()}',
           ),
         ),
         Flexible(
@@ -35,7 +40,9 @@ class ResumeWidget extends StatelessWidget {
             title: "Activos",
             color: Colors.blue,
             icon: Icons.hotel,
-            cifra: '${municipalInfo.activos.toInt().toString()}',
+            cifra: municipalInfo.datacovid.all.resume.isEmpty
+                ? "Sin datos"
+                : '${municipalInfo.datacovid.all.resume[1].value.toInt().toString()}',
           ),
         ),
         Flexible(
@@ -44,7 +51,9 @@ class ResumeWidget extends StatelessWidget {
             title: "Fallecidos",
             color: Colors.red,
             icon: Icons.highlight_remove,
-            cifra: '${municipalInfo.fallecidos.toInt().toString()}',
+            cifra: municipalInfo.datacovid.all.resume.isEmpty
+                ? "Sin datos"
+                : '${municipalInfo.datacovid.all.resume[4].value.toInt().toString()}',
           ),
         ),
       ],

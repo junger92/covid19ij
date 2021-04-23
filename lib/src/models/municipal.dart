@@ -17,28 +17,29 @@ class Municipal {
       name: 'updated',
       fromJson: dateTimeFromJson,
       toJson: dateTimeToJsonFixUpdate)
-  DateTime? updated;
+  DateTime? updated = DateTime(0);
 
   @JsonKey(name: 'resume')
-  List<ItemDouble>? resume;
+  List<ItemDouble>? resume = [];
 
   @JsonKey(name: 'cases_by_sex')
-  CasesBySex? casesBySex;
+  CasesBySex? casesBySex = CasesBySex();
 
   @JsonKey(name: 'cases_by_mode_of_contagion')
-  CasesByModeOfContagion? casesByModeOfContagion;
+  CasesByModeOfContagion? casesByModeOfContagion = CasesByModeOfContagion();
 
   @JsonKey(name: 'evolution_of_cases_by_days')
-  EvolutionOfCasesByDays? evolutionOfCasesByDays;
+  EvolutionOfCasesByDays? evolutionOfCasesByDays = EvolutionOfCasesByDays();
 
   @JsonKey(name: 'distribution_of_cases')
-  DistributionOfCases? distributionOfCases;
+  DistributionOfCases? distributionOfCases = DistributionOfCases();
 
   @JsonKey(name: 'distribution_by_age_ranges')
-  List<ItemCodePlus>? distributionByAgeRanges;
+  List<ItemCodePlus>? distributionByAgeRanges = [];
 
   @JsonKey(name: 'percent_of_symptomatics_and_asymptomatics')
-  PercentSymptomaticsAsymptomatics? percentSymptomaticsAsymptomatics;
+  PercentSymptomaticsAsymptomatics? percentSymptomaticsAsymptomatics =
+      PercentSymptomaticsAsymptomatics();
 
   Municipal();
 

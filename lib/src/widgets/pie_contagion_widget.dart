@@ -31,10 +31,14 @@ class PieContagionWidget extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.30,
                 child: charts.PieChart(
                   _createSampleData(
-                      municipalInfo.importados,
-                      municipalInfo.introducidos,
-                      municipalInfo.autoctonos,
-                      municipalInfo.unkByContagion),
+                      municipalInfo
+                          .datacovid.all.casesByModeOfContagion.imported.value,
+                      municipalInfo
+                          .datacovid.all.casesByModeOfContagion.inserted.value,
+                      municipalInfo.datacovid.all.casesByModeOfContagion
+                          .autochthonous.value,
+                      municipalInfo
+                          .datacovid.all.casesByModeOfContagion.unknown.value),
                   behaviors: [
                     new charts.DatumLegend(
                       position: charts.BehaviorPosition.bottom,

@@ -6,8 +6,8 @@ part 'percent_of_symptomatics_and_asymptomatics.g.dart';
 
 @JsonSerializable()
 class PercentSymptomaticsAsymptomatics {
-  ItemDouble? symptomatics;
-  ItemDouble? asymptomatics;
+  ItemDouble? symptomatics = ItemDouble();
+  ItemDouble? asymptomatics = ItemDouble();
 
   PercentSymptomaticsAsymptomatics();
 

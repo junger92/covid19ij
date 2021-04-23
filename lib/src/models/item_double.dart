@@ -4,8 +4,8 @@ part 'item_double.g.dart';
 
 @JsonSerializable()
 class ItemDouble {
-  String? name;
-  double? value;
+  String? name = "";
+  double? value = 0;
 
   ItemDouble();
 

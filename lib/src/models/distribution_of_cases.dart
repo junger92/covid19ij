@@ -6,11 +6,11 @@ part 'distribution_of_cases.g.dart';
 
 @JsonSerializable()
 class DistributionOfCases {
-  Item? recovered;
-  Item? active;
-  Item? evacuees;
-  Item? deaths;
-  Item? cases;
+  Item? recovered = Item();
+  Item? active = Item();
+  Item? evacuees = Item();
+  Item? deaths = Item();
+  Item? cases = Item();
 
   DistributionOfCases();
 

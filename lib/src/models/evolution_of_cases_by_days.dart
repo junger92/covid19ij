@@ -7,10 +7,10 @@ part 'evolution_of_cases_by_days.g.dart';
 
 @JsonSerializable()
 class EvolutionOfCasesByDays {
-  ItemList? accumulated;
-  ItemList? daily;
-  ItemList? active;
-  ItemDateList? date;
+  ItemList? accumulated = ItemList();
+  ItemList? daily = ItemList();
+  ItemList? active = ItemList();
+  ItemDateList? date = ItemDateList();
 
   EvolutionOfCasesByDays();
 

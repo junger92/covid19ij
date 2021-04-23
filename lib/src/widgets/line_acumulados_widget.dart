@@ -29,8 +29,14 @@ class LineAcumuladosWidget extends StatelessWidget {
               Container(
                 height: MediaQuery.of(context).size.height * 0.35,
                 child: charts.TimeSeriesChart(
-                    _createSampleData(municipalInfo.acumulados,
-                        municipalInfo.activosBydate, municipalInfo.fechas),
+                    _createSampleData(
+                      municipalInfo.datacovid.all.evolutionOfCasesByDays
+                          .accumulated.values,
+                      municipalInfo
+                          .datacovid.all.evolutionOfCasesByDays.active.values,
+                      municipalInfo
+                          .datacovid.all.evolutionOfCasesByDays.date.values,
+                    ),
                     behaviors: [new charts.SeriesLegend()],
                     defaultRenderer:
                         new charts.LineRendererConfig(includePoints: true)),

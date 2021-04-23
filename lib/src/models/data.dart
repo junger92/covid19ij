@@ -8,7 +8,7 @@ part 'data.g.dart';
 @JsonSerializable(ignoreUnannotated: true)
 class Data {
   @JsonKey(name: 'all')
-  Municipal? all;
+  Municipal? all = Municipal();
 
   @JsonKey(name: 'provinces')
   Map<String, ConsejoPopular>? provinces;

@@ -1,10 +1,11 @@
+// @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:covid19ij/src/providers/data_provider.dart';
 
 class ConsejoSelectWidget extends StatefulWidget {
-  const ConsejoSelectWidget({Key? key}) : super(key: key);
+  const ConsejoSelectWidget({Key key}) : super(key: key);
 
   @override
   _ConsejoSelectWidgetState createState() => _ConsejoSelectWidgetState();
@@ -50,8 +51,8 @@ class _ConsejoSelectWidgetState extends State<ConsejoSelectWidget> {
                   child: Text(value),
                 );
               }).toList(),
-              onChanged: (String? value) {
-                municipalInfo.fetchConsejo(value!);
+              onChanged: (String value) {
+                municipalInfo.fetchConsejo(value);
                 onSelected(value);
               },
             ),

@@ -32,7 +32,8 @@ class AgePlotWidget extends StatelessWidget {
               Container(
                 height: MediaQuery.of(context).size.height * 0.35,
                 child: charts.BarChart(
-                  _createSampleData(municipalInfo.ages),
+                  _createSampleData(
+                      municipalInfo.datacovid.all.distributionByAgeRanges),
                   animate: false,
                   barGroupingType: charts.BarGroupingType.grouped,
                   behaviors: [new charts.SeriesLegend()],

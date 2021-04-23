@@ -5,10 +5,10 @@ part 'item_date_list.g.dart';
 
 @JsonSerializable()
 class ItemDateList {
-  String? name;
+  String? name = "";
 
   @JsonKey(fromJson: dateTimeListFromJson, toJson: dateTimeListToJson)
-  List<DateTime>? values;
+  List<DateTime>? values = [];
 
   ItemDateList();
 

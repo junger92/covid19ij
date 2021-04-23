@@ -99,9 +99,11 @@ class _CustomDialogWidgetState extends State<CustomDialogWidget> {
                           iconSize: 60.0,
                         ),
                       ]);
-                    } else if (snapshot.hasData) {
+                    } else if (snapshot.hasData ||
+                        snapshot.connectionState == ConnectionState.done) {
                       refreshInfo = false;
                       print("data");
+                      print(snapshot.data);
                       return Text(
                         "Datos Actualizados",
                         style: TextStyle(

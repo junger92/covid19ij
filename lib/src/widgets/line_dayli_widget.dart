@@ -30,7 +30,10 @@ class LineDiariosWidget extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.35,
                 child: charts.TimeSeriesChart(
                   _createSampleData(
-                      municipalInfo.diarios, municipalInfo.fechas),
+                      municipalInfo
+                          .datacovid.all.evolutionOfCasesByDays.daily.values,
+                      municipalInfo
+                          .datacovid.all.evolutionOfCasesByDays.date.values),
                   defaultInteractions: false,
                   defaultRenderer: new charts.BarRendererConfig<DateTime>(),
                 ),

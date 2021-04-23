@@ -30,8 +30,10 @@ class PieSexWidget extends StatelessWidget {
               Container(
                 height: MediaQuery.of(context).size.height * 0.30,
                 child: charts.PieChart(
-                  _createSampleData(municipalInfo.manInfected,
-                      municipalInfo.womanInfected, municipalInfo.unkInfected),
+                  _createSampleData(
+                      municipalInfo.datacovid.all.casesBySex.men.value,
+                      municipalInfo.datacovid.all.casesBySex.women.value,
+                      municipalInfo.datacovid.all.casesBySex.unknown.value),
                   behaviors: [
                     new charts.DatumLegend(
                       position: charts.BehaviorPosition.bottom,
