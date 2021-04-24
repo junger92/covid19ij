@@ -51,6 +51,10 @@ class _HomeScreenState extends State<HomeScreen> {
     // });
   }
 
+  void showDrawer() {
+    Scaffold.of(context).openDrawer();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

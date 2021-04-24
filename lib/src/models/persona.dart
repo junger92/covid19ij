@@ -30,6 +30,12 @@ class Persona {
   @JsonKey(name: 'PacientHealth')
   String? pacientHealth = "";
 
+  @JsonKey(
+      name: 'ClinicOutDateShort',
+      fromJson: dateTimeFromJson,
+      toJson: dateTimeToJsonFixUpdate)
+  DateTime? clinicOut = DateTime(0);
+
   @JsonKey(name: 'EpidemiologicClasification')
   String? classification = "";
 

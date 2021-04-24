@@ -1,3 +1,5 @@
+import 'package:covid19ij/src/pages/historial.dart';
+import 'package:covid19ij/src/pages/pretty_home.dart';
 import 'package:covid19ij/src/widgets/dialog_about.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -59,17 +61,32 @@ class _NavDrawerState extends State<NavDrawer> {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.sticky_note_2_outlined),
-            title: Text('Historial de Casos'),
-            onTap: () => {},
+            leading: Icon(
+              Icons.assignment,
+              color: Colors.blueGrey,
+            ),
+            title: Text('Historial de Casos Positivos'),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HistorialPage()),
+              );
+            },
           ),
           ListTile(
-            leading: Icon(Icons.update),
+            leading: Icon(
+              Icons.update,
+              color: Colors.blueGrey,
+            ),
             title: Text('Actualizar Datos'),
             onTap: () => {_showDialog()},
           ),
           ListTile(
-            leading: Icon(Icons.help),
+            leading: Icon(
+              Icons.help,
+              color: Colors.blueGrey,
+            ),
             title: Text('Acerca de ...'),
             onTap: () => {
               showDialog(

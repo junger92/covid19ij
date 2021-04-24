@@ -1,4 +1,5 @@
 // @dart=2.9
+import 'package:covid19ij/src/pages/historial.dart';
 import 'package:covid19ij/src/pages/pretty_home.dart';
 import 'package:covid19ij/src/providers/data_provider.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,10 @@ class MyApp extends StatelessWidget {
         title: 'Covid-19 IJ',
         initialRoute: 'home',
         debugShowCheckedModeBanner: false,
-        routes: {'home': (context) => HomeScreen()},
+        routes: {
+          'home': (context) => HomeScreen(),
+          'historial': (context) => HistorialPage()
+        },
       ),
     );
   }

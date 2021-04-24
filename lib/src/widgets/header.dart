@@ -5,6 +5,7 @@ class MyHeader extends StatefulWidget {
   final String image;
   final String textTop;
   final double offset;
+
   const MyHeader(
       {Key? key,
       required this.image,

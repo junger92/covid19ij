@@ -16,6 +16,7 @@ Persona _$PersonaFromJson(Map<String, dynamic> json) {
     ..confirmationDate =
         dateTimeFromJson(json['ConfirmationDateShort'] as String)
     ..pacientHealth = json['PacientHealth'] as String?
+    ..clinicOut = dateTimeFromJson(json['ClinicOutDateShort'] as String)
     ..classification = json['EpidemiologicClasification'] as String?;
 }
 
@@ -28,5 +29,6 @@ Map<String, dynamic> _$PersonaToJson(Persona instance) => <String, dynamic>{
       'ConfirmationDateShort':
           dateTimeToJsonFixUpdate(instance.confirmationDate),
       'PacientHealth': instance.pacientHealth,
+      'ClinicOutDateShort': dateTimeToJsonFixUpdate(instance.clinicOut),
       'EpidemiologicClasification': instance.classification,
     };
