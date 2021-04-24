@@ -1,4 +1,5 @@
 // @dart=2.9
+import 'package:covid19ij/src/providers/data_provider.dart';
 import 'package:covid19ij/src/widgets/age_widget.dart';
 import 'package:covid19ij/src/widgets/consejo_select_widget.dart';
 import 'package:covid19ij/src/widgets/dialog_widget.dart';
@@ -11,6 +12,7 @@ import 'package:covid19ij/src/widgets/pie_sex_widget.dart';
 import 'package:covid19ij/src/widgets/resume_widget.dart';
 import 'package:covid19ij/src/widgets/update_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -57,6 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final municipalInfo = Provider.of<MunicipalProvider>(context);
     return Scaffold(
       drawer: NavDrawer(),
       body: SingleChildScrollView(
@@ -93,7 +96,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [PieSexWidget(), PieContagionWidget()],
                       ),
-                      LineAcumuladosWidget(),
+                      LineAcumuladosWidget.withSampleData(
+                          municipalInfo.datacovid.all.evolutionOfCasesByDays
+                              .accumulated.values,
+                          municipalInfo.datacovid.all.evolutionOfCasesByDays
+                              .active.values,
+                          municipalInfo.datacovid.all.evolutionOfCasesByDays
+                              .date.values),
                       LineDiariosWidget(),
                       AgePlotWidget()
                     ],
