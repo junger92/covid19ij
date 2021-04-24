@@ -7,9 +7,10 @@ part of 'item.dart';
 // **************************************************************************
 
 Item _$ItemFromJson(Map<String, dynamic> json) {
-  return Item()
-    ..name = json['name'] as String
-    ..value = json['value'] as int;
+  return Item(
+    name: json['name'] as String?,
+    value: json['value'] as int?,
+  );
 }
 
 Map<String, dynamic> _$ItemToJson(Item instance) => <String, dynamic>{

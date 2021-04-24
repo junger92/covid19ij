@@ -8,12 +8,12 @@ part of 'item_code_plus.dart';
 
 ItemCodePlus _$ItemCodePlusFromJson(Map<String, dynamic> json) {
   return ItemCodePlus()
-    ..code = json['code'] as String
-    ..name = json['name'] as String
-    ..value = json['value'] as int
-    ..men = json['men'] as int
-    ..women = json['women'] as int
-    ..unknown = json['unknown'] as int;
+    ..code = json['code'] as String?
+    ..name = json['name'] as String?
+    ..value = json['value'] as int?
+    ..men = json['men'] as int?
+    ..women = json['women'] as int?
+    ..unknown = json['unknown'] as int?;
 }
 
 Map<String, dynamic> _$ItemCodePlusToJson(ItemCodePlus instance) =>

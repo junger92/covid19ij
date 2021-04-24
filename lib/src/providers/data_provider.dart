@@ -83,6 +83,7 @@ class MunicipalProvider extends ChangeNotifier {
       fetchConsejos(this._datacovid.provinces);
       notifyListeners();
       print("data ok");
+      print(this._datacovid.personas[0].address);
     } catch (e) {
       print(e.toString());
       getFromStorage();

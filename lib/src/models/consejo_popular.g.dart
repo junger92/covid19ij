@@ -8,7 +8,9 @@ part of 'consejo_popular.dart';
 
 ConsejoPopular _$ConsejoPopularFromJson(Map<String, dynamic> json) {
   return ConsejoPopular()
-    ..all = Municipal.fromJson(json['all'] as Map<String, dynamic>);
+    ..all = json['all'] == null
+        ? null
+        : Municipal.fromJson(json['all'] as Map<String, dynamic>);
 }
 
 Map<String, dynamic> _$ConsejoPopularToJson(ConsejoPopular instance) =>

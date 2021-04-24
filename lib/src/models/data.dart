@@ -1,3 +1,4 @@
+import 'package:covid19ij/src/models/persona.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import 'consejo_popular.dart';
@@ -12,6 +13,9 @@ class Data {
 
   @JsonKey(name: 'provinces')
   Map<String, ConsejoPopular>? provinces;
+
+  @JsonKey(name: 'people')
+  List<Persona>? personas;
 
   Data();
 

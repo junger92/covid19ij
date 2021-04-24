@@ -59,6 +59,11 @@ class _NavDrawerState extends State<NavDrawer> {
             ),
           ),
           ListTile(
+            leading: Icon(Icons.sticky_note_2_outlined),
+            title: Text('Historial de Casos'),
+            onTap: () => {},
+          ),
+          ListTile(
             leading: Icon(Icons.update),
             title: Text('Actualizar Datos'),
             onTap: () => {_showDialog()},

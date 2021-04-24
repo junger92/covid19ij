@@ -8,7 +8,7 @@ part of 'item_date_list.dart';
 
 ItemDateList _$ItemDateListFromJson(Map<String, dynamic> json) {
   return ItemDateList()
-    ..name = json['name'] as String
+    ..name = json['name'] as String?
     ..values = dateTimeListFromJson(json['values'] as List);
 }
 

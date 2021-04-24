@@ -9,11 +9,18 @@ part of 'cases_by_mode_of_contagion.dart';
 CasesByModeOfContagion _$CasesByModeOfContagionFromJson(
     Map<String, dynamic> json) {
   return CasesByModeOfContagion()
-    ..imported = Item.fromJson(json['imported'] as Map<String, dynamic>)
-    ..inserted = Item.fromJson(json['inserted'] as Map<String, dynamic>)
-    ..autochthonous =
-        Item.fromJson(json['autochthonous'] as Map<String, dynamic>)
-    ..unknown = Item.fromJson(json['unknown'] as Map<String, dynamic>);
+    ..imported = json['imported'] == null
+        ? null
+        : Item.fromJson(json['imported'] as Map<String, dynamic>)
+    ..inserted = json['inserted'] == null
+        ? null
+        : Item.fromJson(json['inserted'] as Map<String, dynamic>)
+    ..autochthonous = json['autochthonous'] == null
+        ? null
+        : Item.fromJson(json['autochthonous'] as Map<String, dynamic>)
+    ..unknown = json['unknown'] == null
+        ? null
+        : Item.fromJson(json['unknown'] as Map<String, dynamic>);
 }
 
 Map<String, dynamic> _$CasesByModeOfContagionToJson(

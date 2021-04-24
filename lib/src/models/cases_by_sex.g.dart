@@ -8,9 +8,15 @@ part of 'cases_by_sex.dart';
 
 CasesBySex _$CasesBySexFromJson(Map<String, dynamic> json) {
   return CasesBySex()
-    ..men = Item.fromJson(json['men'] as Map<String, dynamic>)
-    ..women = Item.fromJson(json['women'] as Map<String, dynamic>)
-    ..unknown = Item.fromJson(json['unknown'] as Map<String, dynamic>);
+    ..men = json['men'] == null
+        ? null
+        : Item.fromJson(json['men'] as Map<String, dynamic>)
+    ..women = json['women'] == null
+        ? null
+        : Item.fromJson(json['women'] as Map<String, dynamic>)
+    ..unknown = json['unknown'] == null
+        ? null
+        : Item.fromJson(json['unknown'] as Map<String, dynamic>);
 }
 
 Map<String, dynamic> _$CasesBySexToJson(CasesBySex instance) =>

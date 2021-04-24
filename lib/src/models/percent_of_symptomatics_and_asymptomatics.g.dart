@@ -9,10 +9,12 @@ part of 'percent_of_symptomatics_and_asymptomatics.dart';
 PercentSymptomaticsAsymptomatics _$PercentSymptomaticsAsymptomaticsFromJson(
     Map<String, dynamic> json) {
   return PercentSymptomaticsAsymptomatics()
-    ..symptomatics =
-        ItemDouble.fromJson(json['symptomatics'] as Map<String, dynamic>)
-    ..asymptomatics =
-        ItemDouble.fromJson(json['asymptomatics'] as Map<String, dynamic>);
+    ..symptomatics = json['symptomatics'] == null
+        ? null
+        : ItemDouble.fromJson(json['symptomatics'] as Map<String, dynamic>)
+    ..asymptomatics = json['asymptomatics'] == null
+        ? null
+        : ItemDouble.fromJson(json['asymptomatics'] as Map<String, dynamic>);
 }
 
 Map<String, dynamic> _$PercentSymptomaticsAsymptomaticsToJson(

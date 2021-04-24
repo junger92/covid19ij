@@ -8,8 +8,8 @@ part of 'item_double.dart';
 
 ItemDouble _$ItemDoubleFromJson(Map<String, dynamic> json) {
   return ItemDouble()
-    ..name = json['name'] as String
-    ..value = (json['value'] as num).toDouble();
+    ..name = json['name'] as String?
+    ..value = (json['value'] as num?)?.toDouble();
 }
 
 Map<String, dynamic> _$ItemDoubleToJson(ItemDouble instance) =>

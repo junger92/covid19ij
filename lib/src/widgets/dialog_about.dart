@@ -57,7 +57,7 @@ class _AboutWidgetState extends State<AboutWidget> {
                 ),
                 SizedBox(height: 10.0),
                 Text(
-                  "Aplicación desarrollada por el Departamento de Informática de la Universidad de la Isla de la Juventud en conjunto con la Dirección Municipal de Salud para ofrecer información actualizada sobre la covid19 en el municipio. Inspirada en la aplicación Covid19 Cuba Data",
+                  "Aplicación desarrollada por el Departamento de Informática de la Universidad de la Isla de la Juventud en conjunto con el Departamento de Vigilancia de la Dirección Municipal de Salud para ofrecer información actualizada sobre la covid19 en el municipio. Inspirada en la aplicación Covid19 Cuba Data",
                   textAlign: TextAlign.justify,
                   style: TextStyle(
                     fontSize: 16.0,

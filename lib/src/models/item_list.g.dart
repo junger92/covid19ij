@@ -8,8 +8,9 @@ part of 'item_list.dart';
 
 ItemList _$ItemListFromJson(Map<String, dynamic> json) {
   return ItemList()
-    ..name = json['name'] as String
-    ..values = (json['values'] as List<dynamic>).map((e) => e as int).toList();
+    ..name = json['name'] as String?
+    ..values =
+        (json['values'] as List<dynamic>?)?.map((e) => e as int).toList();
 }
 
 Map<String, dynamic> _$ItemListToJson(ItemList instance) => <String, dynamic>{

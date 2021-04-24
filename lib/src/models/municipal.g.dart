@@ -9,25 +9,34 @@ part of 'municipal.dart';
 Municipal _$MunicipalFromJson(Map<String, dynamic> json) {
   return Municipal()
     ..updated = dateTimeFromJson(json['updated'] as String)
-    ..resume = (json['resume'] as List<dynamic>)
-        .map((e) => ItemDouble.fromJson(e as Map<String, dynamic>))
+    ..resume = (json['resume'] as List<dynamic>?)
+        ?.map((e) => ItemDouble.fromJson(e as Map<String, dynamic>))
         .toList()
-    ..casesBySex =
-        CasesBySex.fromJson(json['cases_by_sex'] as Map<String, dynamic>)
-    ..casesByModeOfContagion = CasesByModeOfContagion.fromJson(
-        json['cases_by_mode_of_contagion'] as Map<String, dynamic>)
-    ..evolutionOfCasesByDays = EvolutionOfCasesByDays.fromJson(
-        json['evolution_of_cases_by_days'] as Map<String, dynamic>)
-    ..distributionOfCases = DistributionOfCases.fromJson(
-        json['distribution_of_cases'] as Map<String, dynamic>)
+    ..casesBySex = json['cases_by_sex'] == null
+        ? null
+        : CasesBySex.fromJson(json['cases_by_sex'] as Map<String, dynamic>)
+    ..casesByModeOfContagion = json['cases_by_mode_of_contagion'] == null
+        ? null
+        : CasesByModeOfContagion.fromJson(
+            json['cases_by_mode_of_contagion'] as Map<String, dynamic>)
+    ..evolutionOfCasesByDays = json['evolution_of_cases_by_days'] == null
+        ? null
+        : EvolutionOfCasesByDays.fromJson(
+            json['evolution_of_cases_by_days'] as Map<String, dynamic>)
+    ..distributionOfCases = json['distribution_of_cases'] == null
+        ? null
+        : DistributionOfCases.fromJson(
+            json['distribution_of_cases'] as Map<String, dynamic>)
     ..distributionByAgeRanges =
-        (json['distribution_by_age_ranges'] as List<dynamic>)
-            .map((e) => ItemCodePlus.fromJson(e as Map<String, dynamic>))
+        (json['distribution_by_age_ranges'] as List<dynamic>?)
+            ?.map((e) => ItemCodePlus.fromJson(e as Map<String, dynamic>))
             .toList()
     ..percentSymptomaticsAsymptomatics =
-        PercentSymptomaticsAsymptomatics.fromJson(
-            json['percent_of_symptomatics_and_asymptomatics']
-                as Map<String, dynamic>);
+        json['percent_of_symptomatics_and_asymptomatics'] == null
+            ? null
+            : PercentSymptomaticsAsymptomatics.fromJson(
+                json['percent_of_symptomatics_and_asymptomatics']
+                    as Map<String, dynamic>);
 }
 
 Map<String, dynamic> _$MunicipalToJson(Municipal instance) => <String, dynamic>{
