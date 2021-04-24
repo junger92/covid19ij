@@ -1,13 +1,13 @@
 // @dart=2.9
 import 'package:covid19ij/src/models/persona.dart';
-import 'package:covid19ij/src/providers/data_provider.dart';
 import 'package:covid19ij/src/utils/functions.dart';
 import 'package:grouped_list/grouped_list.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class HistorialPage extends StatefulWidget {
-  const HistorialPage({Key key}) : super(key: key);
+  final List<Persona> personas;
+  final String title;
+  const HistorialPage({Key key, this.personas, this.title}) : super(key: key);
 
   @override
   _HistorialPageState createState() => _HistorialPageState();
@@ -21,19 +21,16 @@ class _HistorialPageState extends State<HistorialPage> {
 
   @override
   Widget build(BuildContext context) {
-    final municipalInfo = Provider.of<MunicipalProvider>(context);
     return Scaffold(
       appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.blueGrey),
           backgroundColor: Color.fromRGBO(63, 230, 169, 1),
           title: Text(
-            "Historial de Casos",
+            widget.title,
             style: TextStyle(color: Colors.blueGrey),
           )),
       body: GroupedListView<Persona, DateTime>(
-        elements: municipalInfo.datacovid.personas.isEmpty
-            ? []
-            : municipalInfo.datacovid.personas,
+        elements: widget.personas.isEmpty ? [] : widget.personas,
         groupBy: (element) => element.confirmationDate,
         groupComparator: (value1, value2) => value2.compareTo(value1),
         itemComparator: (item1, item2) =>

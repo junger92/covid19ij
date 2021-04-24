@@ -1,8 +1,10 @@
 import 'package:covid19ij/src/pages/historial.dart';
 import 'package:covid19ij/src/pages/pretty_home.dart';
+import 'package:covid19ij/src/providers/data_provider.dart';
 import 'package:covid19ij/src/widgets/dialog_about.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
 
 import 'dialog_widget.dart';
 
@@ -24,6 +26,7 @@ class _NavDrawerState extends State<NavDrawer> {
 
   @override
   Widget build(BuildContext context) {
+    final municipalInfo = Provider.of<MunicipalProvider>(context);
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
@@ -70,7 +73,11 @@ class _NavDrawerState extends State<NavDrawer> {
               Navigator.pop(context);
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => HistorialPage()),
+                MaterialPageRoute(
+                    builder: (context) => HistorialPage(
+                          title: "Historial de Casos Positivos",
+                          personas: municipalInfo.datacovid.personas,
+                        )),
               );
             },
           ),
